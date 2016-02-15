@@ -42,10 +42,10 @@ public static boolean OneDis(String str1, String str2){
          return OneDis(str2,str1);
       }
       int j = 0;
-      for(int i=0; i<l; i++){
-         if(lstring.charAt(i) == sstring.charAt(j))
+      for(int i=0; i<len1; i++){
+         if(str1.charAt(i) == str2.charAt(j))
             j++;
-         if(j == s)          // including case of ("abc", "ab")
+         if(j == len2)          // including case of ("abc", "ab")
             return true;
       }
       return false;

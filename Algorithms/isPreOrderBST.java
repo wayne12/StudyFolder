@@ -3,6 +3,21 @@
 
 public class isPreOrderBST{
 
+   public static void main(String [] args){
+      isPreOrderBST obj = new isPreOrderBST();
+      
+      //int [] arr = new int []{10, 5, 7, 1, 4, 3, 20, 12};
+      int [] arr = new int []{10, 5, 3, 1, 4, 7, 20, 12};
+
+      
+      boolean ret1 = obj.isPreBST1(arr);
+      
+      boolean ret2 = obj.isPreBST2(arr);
+      
+      boolean ret3 = obj.isPreBST3(arr);
+      
+      System.out.println(ret1+" "+ret2+" "+ret3);
+   }
 
 
    //solution 1:  compare root with right most of left subtree, and left most of right subtree
@@ -76,13 +91,13 @@ public class isPreOrderBST{
          return true;
          
       int idx = s+1;
-      while(idx < e && arr[idx] < arr[s]){idx++;}
+      while(idx <= e && arr[idx] < arr[s]){idx++;}
       
       boolean bleft = true, bright = true;
       if(idx != s+1) // has left tree
          bleft = isPreBST_Help2(arr, s+1, idx-1, arr[s], min);
       if(idx != e+1)// has right tree
-         bright = isPreBST_Help2(arr, s+1, idx-1, max, arr[s]);
+         bright = isPreBST_Help2(arr, idx, e, max, arr[s]);
       return bleft && bright;
    }
    
@@ -96,7 +111,7 @@ public class isPreOrderBST{
       if(s==e)
          return true;
       int idx = s+1;
-      while(idx < e && arr[idx] < arr[s]){idx++;}
+      while(idx <= e && arr[idx] < arr[s]){idx++;}
       
       boolean bleft = true, bright = true;
       if(idx != s+1){//has left tree

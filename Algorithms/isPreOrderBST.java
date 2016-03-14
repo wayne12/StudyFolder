@@ -1,4 +1,4 @@
-
+//given a array, determin if it is a pre-order traversal of a binary search tree
 //average time complexity: O(nlgn)  (worest case: n^2)
 
 public class isPreOrderBST{

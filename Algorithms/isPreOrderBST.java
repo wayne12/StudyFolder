@@ -7,7 +7,7 @@ public class isPreOrderBST{
 
    //solution 1:  compare root with right most of left subtree, and left most of right subtree
    public boolean isPreBST1(int [] arr){
-      if(arr == null) 
+      if(arr == null||arr.length == 0) 
          return false;
       return isPreBST_Help1(arr, 0, arr.length-1);
    }

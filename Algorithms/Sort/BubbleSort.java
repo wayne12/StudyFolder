@@ -20,7 +20,7 @@ public class BubbleSort{
 		if(arr == null || arr.length == 0)
 			return null;
 		int len = arr.length;
-		for(int i = len - 1 ; i > 1; i--){
+		for(int i = len - 1 ; i >= 1; i--){
 			for(int j = 0; j < i; j ++){
 				if(arr[j] > arr[j+1])
 					swap(arr, j, j+1);
